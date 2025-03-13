@@ -12,27 +12,32 @@ import { Text } from "~/components/ui/text";
 export default function HomeScreen() {
   return (
     <View className="flex-1 justify-center items-center gap-5 p-6 bg-background">
-      <Card className="w-full max-w-sm p-6 rounded-2xl">
-        <CardHeader className="items-center">
-          <CardTitle className="pb-2 text-center">Hall Pass</CardTitle>
-          <Text>{new Date().toLocaleTimeString()}</Text>
-        </CardHeader>
+      <Text className="pb-2 text-center text-xl font-semibold">Hall Pass</Text>
 
-        <CardContent>
-          <View className="flex-row justify-center gap-3">
-            <View className="items-center">
-              <Text className="text-sm text-muted-foreground">An app for</Text>
-              <Text className="text-xl font-semibold">Students</Text>
-            </View>
-          </View>
-        </CardContent>
+      <View>
+        <Text className="text-xl font-semibold"> Today's Tasks</Text>
+      </View>
 
-        <CardFooter className="flex-col gap-3 pb-6">
-          <View className="flex-row items-center overflow-hidden">
-            <Text>Update me with your app code</Text>
-          </View>
-        </CardFooter>
-      </Card>
+      <View className="h-15 w-full border-foreground-transparent">
+        <Text className="text-xl font-semibold"> Submit Assignment</Text>
+        <Text>Due 10 Oct</Text>
+      </View>
+      <View className="h-15 w-full border-foreground-transparent">
+        <Text className="text-xl font-semibold"> Library Research</Text>
+        <Text>Due 10 Oct</Text>
+      </View>
+      <View className="h-15 w-full border-foreground-transparent">
+        <Text className="text-xl font-semibold"> Group Essay</Text>
+        <Text>Due 10 Oct</Text>
+      </View>
+      <View className="h-15 w-full border-3 border-foreground-transparent">
+        <Text className="text-xl font-semibold"> Read Chapter 5</Text>
+        <Text>Due 10 Oct</Text>
+      </View>
+      <View className="h-15 w-full border-3 border-foreground-transparent">
+        <Text className="text-xl font-semibold"> Submit Essay </Text>
+        <Text>Due 10 Oct</Text>
+      </View>
     </View>
   );
 }
