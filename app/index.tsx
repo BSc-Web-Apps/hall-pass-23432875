@@ -13,27 +13,12 @@ export default function HomeScreen() {
   return (
     <View className="flex-1 justify-center items-center gap-5 p-6 bg-background">
       <Text className="pb-2 text-center text-xl font-semibold">Hall Pass</Text>
-      <View>
-        <Text className="text-xl font-semibold"> Today's Tasks</Text>
-        <View className="h-15 w-full border-foreground-transparent">
-          <Text className="text-xl font-semibold"> Submit Assignment</Text>
-          <Text>Due 10 Oct</Text>
-        </View>
-        <View className="h-15 w-full border-foreground-transparent">
-          <Text className="text-xl font-semibold"> Library Research</Text>
-          <Text>Due 10 Oct</Text>
-        </View>
-        <View className="h-15 w-full border-foreground-transparent">
-          <Text className="text-xl font-semibold"> Group Essay</Text>
-          <Text>Due 10 Oct</Text>
-        </View>
-        <View className="h-15 w-full border-3 border-foreground-transparent">
-          <Text className="text-xl font-semibold"> Read Chapter 5</Text>
-          <Text>Due 10 Oct</Text>
-        </View>
-        <View className="h-15 w-full border-3 border-foreground-transparent">
-          <Text className="text-xl font-semibold"> Submit Essay </Text>
-          <Text>Due 10 Oct</Text>
+
+      <View className="flex flex-row h-20 w-full border-2 border-cyan-400">
+        <View className="flex w-1/3 h-full border-2 border-pink-400"></View>
+
+        <View className="flex h-full w-2/3 border-2 border-green-400">
+          <Text className="text-foreground">Feed the cat</Text>
         </View>
       </View>
     </View>
