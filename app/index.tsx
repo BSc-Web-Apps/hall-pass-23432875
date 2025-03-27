@@ -49,3 +49,33 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle }) => {
     </View>
   );
 };
+
+interface Task {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+export const TaskList: React.FC = () => {
+  const [tasks, setTasks] = React.useState<Task[]>([
+    { id: 1, title: "Task 1", completed: false },
+    { id: 2, title: "Task 2", completed: false },
+    { id: 3, title: "Task 3", completed: false },
+  ]);
+
+  const toggleTask = (taskId: number) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  return (
+    <View className="w-full max-w-md p-4 bg-white rounded-lg shadow">
+      {tasks.map((task) => (
+        <TaskItem key={task.id} task={task} onToggle={toggleTask} />
+      ))}
+    </View>
+  );
+};
