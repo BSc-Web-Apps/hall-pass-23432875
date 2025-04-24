@@ -13,8 +13,22 @@ export default function HomeScreen() {
   ];
 
   return (
-    <View className="flex-1 justify-center items-center gap-5 p-6 bg-background">
+    <View className="flex-1 justify-center items-center gap-5 bg-background">
       <Text className="pb-2 text-center text-xl font-semibold">Hall Pass</Text>
+
+      {/* Task start */}
+
+      <View className="flex flex-row border-2 border-cyan-400">
+        <View className="flex w-1/1 h-full p-10">
+          <Checkbox checked={checked} onCheckedChange={setChecked} />
+        </View>
+
+        <View className="flex h-20 w-1/2 border-2 border-green-400">
+          <Text className="text-foreground">Task 1</Text>
+        </View>
+      </View>
+
+      {/* Task end */}
 
       <View className="flex flex-row h-20 w-1/2 border-2 border-cyan-400">
         <View className="flex w-1/1 h-full border-2 border-pink-400">
@@ -22,7 +36,16 @@ export default function HomeScreen() {
         </View>
 
         <View className="flex h-20 w-1/2 border-2 border-green-400">
-          <Text className="text-foreground">Updated</Text>
+          <Text className="text-foreground">Task 2</Text>
+        </View>
+      </View>
+      <View className="flex flex-row h-20 w-1/2 border-2 border-cyan-400">
+        <View className="flex w-1/1 h-full border-2 border-pink-400">
+          <Checkbox checked={checked} onCheckedChange={setChecked} />
+        </View>
+
+        <View className="flex h-20 w-1/2 border-2 border-green-400">
+          <Text className="text-foreground">Task 3</Text>
         </View>
       </View>
     </View>
