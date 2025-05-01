@@ -1,11 +1,26 @@
 import * as React from "react";
-import { View } from "react-native";
+import { View, TextInput } from "react-native";
 import { Text } from "~/components/ui/text";
 import { Checkbox } from "~/components/ui/checkbox";
 
-export default function HomeScreen() {
+function Task() {
   const [checked, setChecked] = React.useState(false);
 
+  return (
+    <View className="flex flex-row 400 w-full border-b border-b-stone-600">
+      <View className="flex justify-center w-1/4 items-center p-2">
+        <Checkbox checked={checked} onCheckedChange={setChecked} />
+      </View>
+
+      <View className="flex h-20 w-3/4 p-4">
+        <Text className="text-foreground">Title</Text>
+        <Text className="text-stone-600">Category</Text>
+      </View>
+    </View>
+  );
+}
+
+export default function HomeScreen() {
   const tasks = [
     { id: 1, title: "Task 1", category: "category 1" },
     { id: 2, title: "Task 2", category: "category 2" },
@@ -13,41 +28,14 @@ export default function HomeScreen() {
   ];
 
   return (
-    <View className="flex-1 justify-center items-center gap-5 bg-background">
+    <View className="container mx-auto p-4 flex-1 justify-center items-center gap-5 bg-background">
       <Text className="pb-2 text-center text-xl font-semibold">Hall Pass</Text>
 
-      {/* Task start */}
-
-      <View className="flex flex-row border-2 border-cyan-400">
-        <View className="flex w-1/1 h-full p-10">
-          <Checkbox checked={checked} onCheckedChange={setChecked} />
-        </View>
-
-        <View className="flex h-20 w-1/2 border-2 border-green-400">
-          <Text className="text-foreground">Task 1</Text>
-        </View>
-      </View>
-
-      {/* Task end */}
-
-      <View className="flex flex-row h-20 w-1/2 border-2 border-cyan-400">
-        <View className="flex w-1/1 h-full border-2 border-pink-400">
-          <Checkbox checked={checked} onCheckedChange={setChecked} />
-        </View>
-
-        <View className="flex h-20 w-1/2 border-2 border-green-400">
-          <Text className="text-foreground">Task 2</Text>
-        </View>
-      </View>
-      <View className="flex flex-row h-20 w-1/2 border-2 border-cyan-400">
-        <View className="flex w-1/1 h-full border-2 border-pink-400">
-          <Checkbox checked={checked} onCheckedChange={setChecked} />
-        </View>
-
-        <View className="flex h-20 w-1/2 border-2 border-green-400">
-          <Text className="text-foreground">Task 3</Text>
-        </View>
-      </View>
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      <Task />
     </View>
   );
 }
