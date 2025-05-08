@@ -125,6 +125,14 @@ export default function HomeScreen() {
           Hall Pass
         </Text>
 
+        {tasks.map((task) => (
+          <Task
+            key={task.id}
+            task={task}
+            onToggle={toggleChecked}
+            onDelete={() => deleteTask(task.id)}
+          />
+        ))}
         <TextInput
           className="w-full p-2 border rounded border-stone-400 mb-2 text-white"
           placeholder="Task title"
@@ -147,19 +155,10 @@ export default function HomeScreen() {
             <Button
               title="Remove Selected"
               onPress={removeSelectedTasks}
-              color="red"
+              color="hsl(11, 100%, 60%)"
             />
           </View>
         </View>
-
-        {tasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onToggle={toggleChecked}
-            onDelete={() => deleteTask(task.id)}
-          />
-        ))}
       </View>
     </ScrollView>
   );
