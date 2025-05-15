@@ -18,7 +18,7 @@ type TaskType = {
   checked: boolean;
 };
 
-function Task({
+export function Task({
   task,
   onToggle,
   onDelete,
